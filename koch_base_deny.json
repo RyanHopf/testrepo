@@ -8,7 +8,7 @@
                 "iam:*"
             ],
             "Resource": [
-                "arn:aws:iam::106904787262:role/KBS_Admin_NonProd",
+                "arn:aws:iam::$myaccount:role/KBS_Admin_NonProd",
                 "arn:aws:iam::106904787262:policy/koch-ec2-allow",
                 "arn:aws:iam::106904787262:policy/koch-multiservice-devops",
                 "arn:aws:iam::106904787262:policy/koch-rds-allow",
