@@ -1,0 +1,175 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1478187330000",
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": [
+                "arn:aws:iam::106904787262:role/KBS_Admin_NonProd",
+                "arn:aws:iam::106904787262:policy/koch-ec2-allow",
+                "arn:aws:iam::106904787262:policy/koch-multiservice-devops",
+                "arn:aws:iam::106904787262:policy/koch-rds-allow",
+                "arn:aws:iam::106904787262:policy/koch-redshift-allow",
+                "arn:aws:iam::106904787262:policy/koch_base_deny"
+            ]
+        },
+        {
+            "Sid": "Stmt1472760739000",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DeleteSecurityGroup",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress"
+            ],
+            "Resource": [
+                "arn:aws:ec2:us-east-1:106904787262:security-group/sg-b7a216cc"
+            ]
+        },
+        {
+            "Sid": "Stmt1478188252000",
+            "Effect": "Deny",
+            "Action": [
+                "events:*"
+            ],
+            "Resource": [
+                "arn:aws:events:us-east-1:106904787262:rule/koch-events-tag-governor",
+                "arn:aws:events:us-east-1:106904787262:rule/EC2-Lambda-Management",
+                "arn:aws:events:us-east-1:106904787262:rule/Hourly-Tag-Assets"
+            ]
+        },
+        {
+            "Sid": "Stmt1478188399000",
+            "Effect": "Deny",
+            "Action": [
+                "directconnect:*",
+                "aws-portal:*",
+                "ds:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "Stmt1478188559000",
+            "Effect": "Deny",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::kbs-api-security-logs"
+            ]
+        },
+        {
+            "Sid": "Stmt1478188559001",
+            "Effect": "Deny",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::kbs-api-security-logs/*"
+            ]
+        },
+        {
+            "Sid": "Stmt1478188968000",
+            "Effect": "Deny",
+            "Action": [
+                "sns:*"
+            ],
+            "Resource": [
+                "arn:aws:sns:us-east-1:106904787262:koch-sns-tag-governor",
+                "arn:aws:sns:us-east-1:106904787262:KBS_API_Security_SNS"
+            ]
+        },
+        {
+            "Sid": "Stmt1478189230000",
+            "Effect": "Deny",
+            "Action": [
+                "cloudtrail:*"
+            ],
+            "Resource": [
+                "arn:aws:cloudtrail:us-east-1:106904787262:trail/KBS_API_Security_Trail",
+                "arn:aws:cloudtrail:us-east-1:106904787262:trail/kbs-security-logs"
+            ]
+        },
+        {
+            "Sid": "Stmt1478189559000",
+            "Effect": "Deny",
+            "Action": [
+                "lambda:*"
+            ],
+            "Resource": [
+                "arn:aws:lambda:us-east-1:106904787262:function:EC2-Tag-Assets"
+            ]
+        },
+        {
+            "Sid": "Stmt1458326306000",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:CreateDhcpOptions",
+                "ec2:RejectVpcPeeringConnection",
+                "ec2:CreateRoute",
+                "ec2:ReplaceNetworkAclAssociation",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:AcceptVpcPeeringConnection",
+                "ec2:AssociateDhcpOptions",
+                "ec2:AssociateRouteTable",
+                "ec2:AttachClassicLinkVpc",
+                "ec2:AttachInternetGateway",
+                "ec2:AttachVpnGateway",
+                "ec2:CreateCustomerGateway",
+                "ec2:CreateInternetGateway",
+                "ec2:CreateNatGateway",
+                "ec2:CreateNetworkAcl",
+                "ec2:CreateNetworkAclEntry",
+                "ec2:CreateRouteTable",
+                "ec2:CreateSubnet",
+                "ec2:CreateVpc",
+                "ec2:CreateVpcEndpoint",
+                "ec2:CreateVpcPeeringConnection",
+                "ec2:CreateVpnConnection",
+                "ec2:CreateVpnConnectionRoute",
+                "ec2:CreateVpnGateway",
+                "ec2:DeleteCustomerGateway",
+                "ec2:DeleteDhcpOptions",
+                "ec2:DeleteInternetGateway",
+                "ec2:DeleteNatGateway",
+                "ec2:DeleteNetworkAcl",
+                "ec2:DeleteNetworkAclEntry",
+                "ec2:DeleteRoute",
+                "ec2:DeleteRouteTable",
+                "ec2:DeleteSubnet",
+                "ec2:DeleteVpc",
+                "ec2:DeleteVpcEndpoints",
+                "ec2:DeleteVpcPeeringConnection",
+                "ec2:DeleteVpnConnection",
+                "ec2:DeleteVpnConnectionRoute",
+                "ec2:DeleteVpnGateway",
+                "ec2:DetachClassicLinkVpc",
+                "ec2:DetachInternetGateway",
+                "ec2:DetachVpnGateway",
+                "ec2:DisableVgwRoutePropagation",
+                "ec2:DisableVpcClassicLink",
+                "ec2:DisassociateRouteTable",
+                "ec2:EnableVgwRoutePropagation",
+                "ec2:EnableVpcClassicLink",
+                "ec2:ModifySubnetAttribute",
+                "ec2:ModifyVpcAttribute",
+                "ec2:ModifyVpcEndpoint",
+                "ec2:ModifyVpcPeeringConnectionOptions",
+                "ec2:ReplaceNetworkAclEntry",
+                "ec2:ReplaceRoute",
+                "ec2:ReplaceRouteTableAssociation",
+                "ec2:RestoreAddressToClassic"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
